@@ -61,6 +61,8 @@ modules:
       - -DLIBS_ENTRY_PATH=/app/lib
       - -DWITH_DBUS=ON
     post-install:
+      # Add appstream metadata manifest for Linux
+      # https://github.com/brezerk/q4wine/pull/194
       - install -Dm644 -t /app/share/appdata/ ${FLATPAK_ID}.appdata.xml
     sources:
       - type: git
